@@ -43,6 +43,23 @@ function isPalindrome(string){
     return string === string.split('').reverse().join('');
 }
 
+class Person {
+    constructor(name, age) {
+      this.name = name;
+      this.age = age;
+    }
+    printName(){
+        console.log(this.name) 
+    }
+    get Age(){
+        return this.age;
+    }
+  }
+
+
+function printOutPersonAge(person){ // Debe ser una instancia de la clase persona!
+    console.log(person.Age);
+}
 
 // First function test
 console.log(generateRandomNumber());
@@ -50,10 +67,13 @@ console.log(generateRandomNumber());
 // Second function test 
 console.log(filterNegativeNumbers([-4, -6, -5, 0, 34, 54, -7]));
 console.log(filterNegativeNumbers([-4, -6, -5, -1, -34, -54, -7]));
+console.log(filterNegativeNumbers([]));
+
 
 // Second function (functional) test
 console.log(functionalfilterNegativeNumbers([-4, -6, -5, 0, 34, 54, -7]));
 console.log(functionalfilterNegativeNumbers([-4, -6, -5, -1, -34, -54, -7]));
+console.log(filterNegativeNumbers([]));
 
 // Third function test
 console.log(mapNumbersIntoStrings([-4, -6, -5, 0, 34, 54, -7]));
@@ -71,3 +91,12 @@ printType(printType);
 console.log(isPalindrome("madam"));
 console.log(isPalindrome("anitalavalatina"));
 console.log(isPalindrome("holi"));
+
+// Sixth function test 
+const student = new Person('John', 25);
+student.printName();
+printOutPersonAge(student);
+
+const developer = new Person('Any',26);
+developer.printName();
+printOutPersonAge(developer);
