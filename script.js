@@ -22,11 +22,32 @@ function functionalfilterNegativeNumbers(array){
     return newArray = array.filter(function(x){ return x >= 0 });
 }
 
+function mapNumbersIntoStrings(array){
+    let newArray = [];
+    for (let i = 0; i < array.length; i++){
+        newArray[i] = array[i].toString();
+    } 
+    return newArray;
+}
+
+function functionalmapNumbersIntoStrings(array){
+    return newArray = array.map(function (x){ return x.toString();});
+}
+
+
 // First function test
 console.log(generateRandomNumber());
 
 // Second function test 
 console.log(filterNegativeNumbers([-4, -6, -5, 0, 34, 54, -7]));
+console.log(filterNegativeNumbers([-4, -6, -5, -1, -34, -54, -7]));
 
-// Secon function (functional) test
+// Second function (functional) test
 console.log(functionalfilterNegativeNumbers([-4, -6, -5, 0, 34, 54, -7]));
+console.log(functionalfilterNegativeNumbers([-4, -6, -5, -1, -34, -54, -7]));
+
+// Third function test
+console.log(mapNumbersIntoStrings([-4, -6, -5, 0, 34, 54, -7]));
+
+// Third function (functional) test
+console.log(functionalmapNumbersIntoStrings([-4, -6, -5, 0, 34, 54, -7]));
