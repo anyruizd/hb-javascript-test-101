@@ -31,8 +31,13 @@ function mapNumbersIntoStrings(array){
 }
 
 function functionalmapNumbersIntoStrings(array){
-    return newArray = array.map(function (x){ return x.toString();});
+    return array.map(function (x){ return x.toString();});
 }
+
+function printType(variable){
+    console.log(typeof(variable));
+}
+
 
 
 // First function test
@@ -51,3 +56,9 @@ console.log(mapNumbersIntoStrings([-4, -6, -5, 0, 34, 54, -7]));
 
 // Third function (functional) test
 console.log(functionalmapNumbersIntoStrings([-4, -6, -5, 0, 34, 54, -7]));
+
+// Fourth function test
+printType('1');
+printType(1);
+printType([1, 2, 3, 4, 5]);
+printType(printType);
