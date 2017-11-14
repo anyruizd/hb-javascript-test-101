@@ -39,6 +39,10 @@ function printType(variable){
 }
 
 
+function isPalindrome(string){
+    return string === string.split('').reverse().join('');
+}
+
 
 // First function test
 console.log(generateRandomNumber());
@@ -62,3 +66,8 @@ printType('1');
 printType(1);
 printType([1, 2, 3, 4, 5]);
 printType(printType);
+
+// Fifth function test
+console.log(isPalindrome("madam"));
+console.log(isPalindrome("anitalavalatina"));
+console.log(isPalindrome("holi"));
