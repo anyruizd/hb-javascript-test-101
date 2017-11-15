@@ -18,7 +18,7 @@ export function filterNegativeNumbers(array){
 }
 
 
-export function functionalfilterNegativeNumbers(array){
+export function functionalFilterNegativeNumbers(array){
     return newArray = array.filter(function(x){ return x >= 0 });
 }
 
@@ -30,7 +30,7 @@ export function mapNumbersIntoStrings(array){
     return newArray;
 }
 
-export function functionalmapNumbersIntoStrings(array){
+export function functionalMapNumbersIntoStrings(array){
     return array.map(function (x){ return x.toString();});
 }
 
@@ -40,7 +40,7 @@ export function printType(variable){
 
 
 export function isPalindrome(string){
-    const newString = string.replace(/[^a-z0-9]/ig,'');
+    const newString = string.replace(/[^a-z0-9]/ig,'').toLowercase();
     return newString === newString.split('').reverse().join('');
 }
 
