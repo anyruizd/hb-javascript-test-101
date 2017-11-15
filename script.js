@@ -1,4 +1,4 @@
-function generateRandomNumber(){
+export function generateRandomColor(){
     const color = {};
     color.r = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
     color.g = Math.floor(Math.random() * (255 - 0 + 1)) + 0;
@@ -7,7 +7,7 @@ function generateRandomNumber(){
 }
 
 
-function filterNegativeNumbers(array){
+export function filterNegativeNumbers(array){
     let newArray = [];
     for(let i = 0; i < array.length; i++){
         if (array[i] >= 0){
@@ -18,11 +18,11 @@ function filterNegativeNumbers(array){
 }
 
 
-function functionalfilterNegativeNumbers(array){
+export function functionalfilterNegativeNumbers(array){
     return newArray = array.filter(function(x){ return x >= 0 });
 }
 
-function mapNumbersIntoStrings(array){
+export function mapNumbersIntoStrings(array){
     let newArray = [];
     for (let i = 0; i < array.length; i++){
         newArray[i] = array[i].toString();
@@ -30,20 +30,21 @@ function mapNumbersIntoStrings(array){
     return newArray;
 }
 
-function functionalmapNumbersIntoStrings(array){
+export function functionalmapNumbersIntoStrings(array){
     return array.map(function (x){ return x.toString();});
 }
 
-function printType(variable){
+export function printType(variable){
     console.log(typeof(variable));
 }
 
 
-function isPalindrome(string){
-    return string === string.split('').reverse().join('');
+export function isPalindrome(string){
+    const newString = string.replace(/[^a-z0-9]/ig,'');
+    return newString === newString.split('').reverse().join('');
 }
 
-class Person {
+export class Person {
     constructor(name, age) {
       this.name = name;
       this.age = age;
@@ -57,46 +58,6 @@ class Person {
   }
 
 
-function printOutPersonAge(person){ // Debe ser una instancia de la clase persona!
+export function printOutPersonAge(person){
     console.log(person.Age);
 }
-
-// First function test
-console.log(generateRandomNumber());
-
-// Second function test 
-console.log(filterNegativeNumbers([-4, -6, -5, 0, 34, 54, -7]));
-console.log(filterNegativeNumbers([-4, -6, -5, -1, -34, -54, -7]));
-console.log(filterNegativeNumbers([]));
-
-
-// Second function (functional) test
-console.log(functionalfilterNegativeNumbers([-4, -6, -5, 0, 34, 54, -7]));
-console.log(functionalfilterNegativeNumbers([-4, -6, -5, -1, -34, -54, -7]));
-console.log(filterNegativeNumbers([]));
-
-// Third function test
-console.log(mapNumbersIntoStrings([-4, -6, -5, 0, 34, 54, -7]));
-
-// Third function (functional) test
-console.log(functionalmapNumbersIntoStrings([-4, -6, -5, 0, 34, 54, -7]));
-
-// Fourth function test
-printType('1');
-printType(1);
-printType([1, 2, 3, 4, 5]);
-printType(printType);
-
-// Fifth function test
-console.log(isPalindrome("madam"));
-console.log(isPalindrome("anitalavalatina"));
-console.log(isPalindrome("holi"));
-
-// Sixth function test 
-const student = new Person('John', 25);
-student.printName();
-printOutPersonAge(student);
-
-const developer = new Person('Any',26);
-developer.printName();
-printOutPersonAge(developer);
