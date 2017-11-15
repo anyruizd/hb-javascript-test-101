@@ -19,7 +19,8 @@ export function filterNegativeNumbers(array){
 
 
 export function functionalFilterNegativeNumbers(array){
-    return newArray = array.filter(function(x){ return x >= 0 });
+   const newArray = array.filter(function(x){ return x >= 0 });
+   return newArray;
 }
 
 export function mapNumbersIntoStrings(array){
