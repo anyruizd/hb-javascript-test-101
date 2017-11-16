@@ -14,8 +14,6 @@ describe ('generateRandomColor', () =>{
     const keys = ['r', 'g', 'b'];
     const color = generateRandomColor();
     it('should return an object containing r: g: b: ', () =>{
-        // int numbers
-        // range between 0-255
         expect(color).toMatchObject({
             r: expect.any(Number),
             g: expect.any(Number),
@@ -67,3 +65,41 @@ describe('functionalFilterNegativeNumbers', () =>{
     });
 });
 
+describe('mapNumbersIntoStrings', () => {
+    it('should return a new array with all its elements converted into String', () => {
+        expect(mapNumbersIntoStrings([-4, -6, -5, 0, 34, 54, -7])).toEqual(['-4', '-6', '-5', '0', '34', '54', '-7']);
+    });
+    it('should return the same array if is a string array', () => {
+        expect(mapNumbersIntoStrings(['4', '6', '5', '0', '34', '54', '7'])).toEqual(['4', '6', '5', '0', '34', '54', '7']);
+    });
+});
+
+describe('functionalMapNumbersIntoStrings', () => {
+    it('should return a new array with all its elements converted into String', () => {
+        expect(functionalMapNumbersIntoStrings([-4, -6, -5, 0, 34, 54, -7])).toEqual(['-4', '-6', '-5', '0', '34', '54', '-7'])
+    });
+    it('should return the same array if is a string array', () => {
+        expect(functionalMapNumbersIntoStrings(['4', '6', '5', '0', '34', '54', '7'])).toEqual(['4', '6', '5', '0', '34', '54', '7']);
+    });
+});
+
+describe('printType', () => {
+    const spy = jest.spyOn(global.console,'log');
+    const types = ['string', 'number','function','undefined','object'];
+    const variables = ['any', 2, function (){}, undefined, []];
+    for (let i=0; i< types.length; i++){
+        printType(variables[i]);
+        it('should call the console', () => {
+            expect(spy).toHaveBeenCalled();
+        });
+        it('should print in the console the type', () => {
+            expect(spy).toBeCalledWith(types[i]);
+        });
+    };
+});
+
+describe('isPalindrome', () => {
+    it('should return true or false if is or not a palindrome ', () => {
+
+    });
+});
