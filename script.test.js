@@ -72,6 +72,9 @@ describe('mapNumbersIntoStrings', () => {
     it('should return the same array if is a string array', () => {
         expect(mapNumbersIntoStrings(['4', '6', '5', '0', '34', '54', '7'])).toEqual(['4', '6', '5', '0', '34', '54', '7']);
     });
+    it('should return an empty array if another is inserted', () => {
+        expect(mapNumbersIntoStrings([])).toEqual([]);
+    });
 });
 
 describe('functionalMapNumbersIntoStrings', () => {
@@ -80,6 +83,9 @@ describe('functionalMapNumbersIntoStrings', () => {
     });
     it('should return the same array if is a string array', () => {
         expect(functionalMapNumbersIntoStrings(['4', '6', '5', '0', '34', '54', '7'])).toEqual(['4', '6', '5', '0', '34', '54', '7']);
+    });
+    it('should return an empty array if another is inserted', () => {
+        expect(functionalMapNumbersIntoStrings([])).toEqual([]);
     });
 });
 
@@ -92,7 +98,7 @@ describe('printType', () => {
         it('should call the console', () => {
             expect(spy).toHaveBeenCalled();
         });
-        it('should print in the console the type', () => {
+        it('should print type into the console', () => {
             expect(spy).toBeCalledWith(types[i]);
         });
     };
@@ -100,6 +106,32 @@ describe('printType', () => {
 
 describe('isPalindrome', () => {
     it('should return true or false if is or not a palindrome ', () => {
+        expect(isPalindrome('anitalavalatina')).toBeTruthy();
+        expect(isPalindrome('holi')).toBeFalsy();
+    });
+});
 
+describe('Person', () => {
+    const spy2 = jest.spyOn(global.console,'log');
+    const person = new Person('Any', 26);
+    it('should return name and age when is called', () => {
+        expect(person).toMatchObject({
+            name: 'Any',
+            age: 26
+        });
+    });
+
+    it('should print the name into the console', () => {
+        person.printName();
+        expect(spy2).toBeCalledWith('Any');
+    });
+});
+
+describe('printOutPersonAge', () => {
+    const spy3 = jest.spyOn(global.console,'log');
+    const person = new Person('Any', 26);
+    it('should print the age into the console', () => {
+        printOutPersonAge(person);
+        expect(spy3).toBeCalledWith(26);
     });
 });

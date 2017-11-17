@@ -41,7 +41,7 @@ export function printType(variable){
 
 
 export function isPalindrome(string){
-    const newString = string.replace(/[^a-z0-9]/ig,'').toLowercase();
+    const newString = string.replace(/[^a-z0-9]/ig,'').toLowerCase();
     return newString === newString.split('').reverse().join('');
 }
 
@@ -53,12 +53,9 @@ export class Person {
     printName(){
         console.log(this.name) 
     }
-    get Age(){
-        return this.age;
-    }
   }
 
 
 export function printOutPersonAge(person){
-    console.log(person.Age);
+    console.log(person.age);
 }
