@@ -109,6 +109,10 @@ describe('isPalindrome', () => {
         expect(isPalindrome('anitalavalatina')).toBeTruthy();
         expect(isPalindrome('holi')).toBeFalsy();
     });
+
+    it('should return is palindrome even if array has capital letters and spaces', () => {
+        expect(isPalindrome('Anita Lava la Tina')).toBeTruthy();
+    });
 });
 
 describe('Person', () => {
